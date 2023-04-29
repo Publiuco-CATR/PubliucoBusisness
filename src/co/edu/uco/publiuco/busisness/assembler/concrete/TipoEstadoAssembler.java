@@ -9,6 +9,7 @@ public final class TipoEstadoAssembler
 	implements Assembler<TipoEstadoDomain, TipoEstadoDTO, TipoEstadoEntity>{
 
 	private static final Assembler<TipoEstadoDomain, TipoEstadoDTO, TipoEstadoEntity> INSTANCE = new TipoEstadoAssembler();
+	
 	public static final Assembler<TipoEstadoDomain, TipoEstadoDTO, TipoEstadoEntity> getInstance(){
 		return INSTANCE;
 	}
@@ -36,5 +37,6 @@ public final class TipoEstadoAssembler
 	public TipoEstadoDomain toDomainFromEntity(TipoEstadoEntity entity) {
 		return new TipoEstadoDomain(entity.getIdentificador(), entity.getNombre());
 	}
+
 
 }
