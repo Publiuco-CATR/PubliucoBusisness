@@ -1,5 +1,9 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+//import java.util.ArrayList;
+import java.util.List;
+//import java.util.stream.Collectors;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.EstadoDomain;
 import co.edu.uco.publiuco.dto.EstadoDTO;
@@ -36,4 +40,14 @@ public final class EstadoAssembler
 	public static EstadoAssembler getInstance() { 
 		return INSTANCE; 
 	}
+	
+	@Override 
+	public final List<EstadoDomain> toDomainFromEntityList(final List<EstadoEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
+	}
+	@Override
+	public List<EstadoDTO> toDTOFromDomainList(List<EstadoDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
+	
 }
