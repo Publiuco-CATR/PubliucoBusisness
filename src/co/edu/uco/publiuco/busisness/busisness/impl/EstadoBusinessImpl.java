@@ -42,5 +42,9 @@ public class EstadoBusinessImpl implements EstadoBusiness{
 		final EstadoEntity entity = EstadoAssembler.getInstance().toEntityFromDomain(domain);
 		daoFactory.getEstadoDAO().delete(entity);		
 	}
+	
+	public static void main(String[] args) {
+		EscritorBusinessImpl intento = new EscritorBusinessImpl(null);
+	}
 
 }

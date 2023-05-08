@@ -32,8 +32,7 @@ public final class EstadoFacadeImpl implements EstadoFacade{
 			
 			business.register(domain);
 			
-			daoFactory.commitTransaction();
-		
+			daoFactory.closeConnection();		
 			
 		} catch (final PubliucoException exception) {
 			daoFactory.rollbackTransaction();
@@ -45,7 +44,7 @@ public final class EstadoFacadeImpl implements EstadoFacade{
 			
 			throw PubliucoBusisnessException.create(technicalMessage, userMessage, exception);
 		} finally {
-			daoFactory.cerrarConexion();
+			daoFactory.closeConnection();
 		}
 		
 	}
@@ -57,23 +56,19 @@ public final class EstadoFacadeImpl implements EstadoFacade{
 			final EstadoDomain domainList = EstadoAssembler.getInstance().toDomainFromDTO(dto);
 			
 			List<EstadoDomain> lista = business.list(domainList); 
-			
-			//daoFactory.commitTransaction();
-			
+						
 			return EstadoAssembler.getInstance().toDTOFromDomainList(lista);
 		
 			
 		} catch (final PubliucoException exception) {
-			//daoFactory.rollbackTransaction();
 			throw exception;
 		} catch (final Exception exception) {
-			//daoFactory.rollbackTransaction();
 			var userMessage = EstadoFacadeImplMessages.REGISTRER_ESTADO_USER_MESSAGE;
 			var technicalMessage = EstadoFacadeImplMessages.REGISTRER_ESTADO_TECHNICAL_MESSAGE;
 			
 			throw PubliucoBusisnessException.create(technicalMessage, userMessage, exception);
 		} finally {
-			daoFactory.cerrarConexion();
+			daoFactory.closeConnection();
 		}
 	}
 
@@ -98,7 +93,7 @@ public final class EstadoFacadeImpl implements EstadoFacade{
 			
 			throw PubliucoBusisnessException.create(technicalMessage, userMessage, exception);
 		} finally {
-			daoFactory.cerrarConexion();
+			daoFactory.closeConnection();
 		}
 		
 	}
@@ -124,7 +119,7 @@ public final class EstadoFacadeImpl implements EstadoFacade{
 			
 			throw PubliucoBusisnessException.create(technicalMessage, userMessage, exception);
 		} finally {
-			daoFactory.cerrarConexion();
+			daoFactory.closeConnection();
 		}
 		
 	}
