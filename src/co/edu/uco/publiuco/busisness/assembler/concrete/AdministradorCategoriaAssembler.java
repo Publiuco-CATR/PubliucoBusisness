@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.AdministradorCategoriaDomain;
 import co.edu.uco.publiuco.dto.AdministradorCategoriaDTO;
@@ -34,5 +36,15 @@ public final class AdministradorCategoriaAssembler implements Assembler<Administ
     public static AdministradorCategoriaAssembler getInstance() { 
     	return INSTANCE; 
     }
+	@Override
+	public List<AdministradorCategoriaDomain> toDomainFromEntityList(List<AdministradorCategoriaEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<AdministradorCategoriaDTO> toDTOFromDomainList(List<AdministradorCategoriaDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

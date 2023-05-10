@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.TipoEstadoDomain;
 import co.edu.uco.publiuco.dto.TipoEstadoDTO;
@@ -34,5 +36,17 @@ public final class TipoEstadoAssembler implements Assembler<TipoEstadoDomain, Ti
     public static TipoEstadoAssembler getInstance() { 
     	return INSTANCE; 
     }
+
+	@Override
+	public List<TipoEstadoDomain> toDomainFromEntityList(List<TipoEstadoEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<TipoEstadoDTO> toDTOFromDomainList(List<TipoEstadoDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

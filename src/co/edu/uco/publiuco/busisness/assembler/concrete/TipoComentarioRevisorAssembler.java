@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.TipoComentarioRevisorDomain;
 import co.edu.uco.publiuco.dto.TipoComentarioRevisorDTO;
@@ -35,5 +37,15 @@ public final class TipoComentarioRevisorAssembler implements Assembler<TipoComen
     public static TipoComentarioRevisorAssembler getInstance() { 
     	return INSTANCE; 
     }
+	@Override
+	public List<TipoComentarioRevisorDomain> toDomainFromEntityList(List<TipoComentarioRevisorEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<TipoComentarioRevisorDTO> toDTOFromDomainList(List<TipoComentarioRevisorDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

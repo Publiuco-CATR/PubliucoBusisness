@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.RevisorRevisionDomain;
 import co.edu.uco.publiuco.dto.RevisorRevisionDTO;
@@ -41,5 +43,17 @@ public final class RevisorRevisionAssembler implements Assembler<RevisorRevision
     public static RevisorRevisionAssembler getInstance() { 
     	return INSTANCE; 
     }
+
+	@Override
+	public List<RevisorRevisionDomain> toDomainFromEntityList(List<RevisorRevisionEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<RevisorRevisionDTO> toDTOFromDomainList(List<RevisorRevisionDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

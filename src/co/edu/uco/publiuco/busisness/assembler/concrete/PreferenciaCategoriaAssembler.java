@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.PreferenciaCategoriaDomain;
 import co.edu.uco.publiuco.dto.PreferenciaCategoriaDTO;
@@ -35,4 +37,16 @@ public final class PreferenciaCategoriaAssembler implements Assembler<Preferenci
     public static PreferenciaCategoriaAssembler getInstance() { 
     	return INSTANCE; 
     }
+
+	@Override
+	public List<PreferenciaCategoriaDomain> toDomainFromEntityList(List<PreferenciaCategoriaEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<PreferenciaCategoriaDTO> toDTOFromDomainList(List<PreferenciaCategoriaDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

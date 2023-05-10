@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.HistorialAccesoPublicacionDomain;
 import co.edu.uco.publiuco.dto.HistorialAccesoPublicacionDTO;
@@ -38,5 +40,16 @@ public final class HistorialAccesoPublicacionAssembler implements Assembler<Hist
     public static HistorialAccesoPublicacionAssembler getInstance() { 
     	return INSTANCE; 
     }
+	@Override
+	public List<HistorialAccesoPublicacionDomain> toDomainFromEntityList(
+			List<HistorialAccesoPublicacionEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<HistorialAccesoPublicacionDTO> toDTOFromDomainList(List<HistorialAccesoPublicacionDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

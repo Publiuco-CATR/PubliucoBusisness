@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.PalabraClavePublicacionDomain;
 import co.edu.uco.publiuco.dto.PalabraClavePublicacionDTO;
@@ -35,4 +37,16 @@ public final class PalabraClavePublicacionAssembler implements Assembler<Palabra
     public static PalabraClavePublicacionAssembler getInstance() { 
     	return INSTANCE; 
     }
+
+	@Override
+	public List<PalabraClavePublicacionDomain> toDomainFromEntityList(List<PalabraClavePublicacionEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<PalabraClavePublicacionDTO> toDTOFromDomainList(List<PalabraClavePublicacionDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.TipoIdentificacionDomain;
 import co.edu.uco.publiuco.dto.TipoIdentificacionDTO;
@@ -35,5 +37,15 @@ public final class TipoIdentificacionAssembler implements Assembler<TipoIdentifi
     public static TipoIdentificacionAssembler getInstance() { 
     	return INSTANCE; 
     }
+	@Override
+	public List<TipoIdentificacionDomain> toDomainFromEntityList(List<TipoIdentificacionEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<TipoIdentificacionDTO> toDTOFromDomainList(List<TipoIdentificacionDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

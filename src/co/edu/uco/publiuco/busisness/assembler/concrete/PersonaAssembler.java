@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.PersonaDomain;
 import co.edu.uco.publiuco.dto.PersonaDTO;
@@ -48,5 +50,15 @@ public final class PersonaAssembler implements Assembler<PersonaDomain, PersonaD
     public static PersonaAssembler getInstance() {
     	return INSTANCE; 
     }
+	@Override
+	public List<PersonaDomain> toDomainFromEntityList(List<PersonaEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<PersonaDTO> toDTOFromDomainList(List<PersonaDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

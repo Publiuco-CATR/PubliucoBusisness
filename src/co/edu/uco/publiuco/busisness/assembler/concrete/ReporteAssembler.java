@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.ReporteDomain;
 import co.edu.uco.publiuco.dto.ReporteDTO;
@@ -38,4 +40,16 @@ public final class ReporteAssembler implements Assembler<ReporteDomain, ReporteD
     public static ReporteAssembler getInstance() { 
     	return INSTANCE; 
     }
+
+	@Override
+	public List<ReporteDomain> toDomainFromEntityList(List<ReporteEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ReporteDTO> toDTOFromDomainList(List<ReporteDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

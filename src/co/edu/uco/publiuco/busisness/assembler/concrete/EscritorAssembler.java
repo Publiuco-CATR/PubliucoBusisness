@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.publiuco.busisness.assembler.Assembler;
 import co.edu.uco.publiuco.busisness.domain.EscritorDomain;
 import co.edu.uco.publiuco.dto.EscritorDTO;
@@ -39,5 +41,15 @@ public final class EscritorAssembler implements Assembler<EscritorDomain, Escrit
     public static EscritorAssembler getInstance() { 
     	return INSTANCE; 
     }
+	@Override
+	public List<EscritorDomain> toDomainFromEntityList(List<EscritorEntity> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<EscritorDTO> toDTOFromDomainList(List<EscritorDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
