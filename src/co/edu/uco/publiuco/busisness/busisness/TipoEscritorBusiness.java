@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.domain.TipoEscritorDomain;
 
@@ -12,6 +13,6 @@ public interface TipoEscritorBusiness {
 
 	void modify(TipoEscritorDomain domain);
 
-	void drop(TipoEscritorDomain domain);
+	void drop(UUID domainId);
 
 }

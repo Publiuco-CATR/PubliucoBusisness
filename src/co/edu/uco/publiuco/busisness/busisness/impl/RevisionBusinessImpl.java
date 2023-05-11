@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.RevisionAssembler;
 import co.edu.uco.publiuco.busisness.busisness.RevisionBusiness;
@@ -40,10 +41,8 @@ public class RevisionBusinessImpl implements RevisionBusiness {
 	}
 
 	@Override
-	public void drop(RevisionDomain domain) {
-		final RevisionEntity entity = RevisionAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getRevisionDAO().delete(entity);
-
+	public void drop(UUID domainId) {
+		daoFactory.getRevisionDAO().delete(domainId);
 	}
 
 }

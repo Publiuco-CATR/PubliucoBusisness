@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.domain.VersionDomain;
 
@@ -12,6 +13,6 @@ public interface VersionBusiness {
 
 	void modify(VersionDomain domain);
 
-	void drop(VersionDomain domain);
+	void drop(UUID domainId);
 
 }

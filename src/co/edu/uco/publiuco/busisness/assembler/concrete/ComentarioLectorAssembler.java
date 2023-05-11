@@ -46,14 +46,12 @@ public final class ComentarioLectorAssembler implements Assembler<ComentarioLect
 
 	@Override
 	public List<ComentarioLectorDomain> toDomainFromEntityList(List<ComentarioLectorEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 
 	@Override
 	public List<ComentarioLectorDTO> toDTOFromDomainList(List<ComentarioLectorDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

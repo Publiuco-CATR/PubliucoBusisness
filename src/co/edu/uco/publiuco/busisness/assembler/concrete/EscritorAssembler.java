@@ -43,13 +43,11 @@ public final class EscritorAssembler implements Assembler<EscritorDomain, Escrit
     }
 	@Override
 	public List<EscritorDomain> toDomainFromEntityList(List<EscritorEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	@Override
 	public List<EscritorDTO> toDTOFromDomainList(List<EscritorDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

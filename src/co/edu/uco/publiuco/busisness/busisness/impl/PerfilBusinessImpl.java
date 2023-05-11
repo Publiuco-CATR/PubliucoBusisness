@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.PerfilAssembler;
 import co.edu.uco.publiuco.busisness.busisness.PerfilBusiness;
@@ -40,9 +41,8 @@ public class PerfilBusinessImpl implements PerfilBusiness {
 	}
 
 	@Override
-	public void drop(PerfilDomain domain) {
-		final PerfilEntity entity = PerfilAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getPerfilDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getPerfilDAO().delete(domainId);
 
 	}
 

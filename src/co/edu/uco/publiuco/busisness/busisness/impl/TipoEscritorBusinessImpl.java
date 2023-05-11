@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.TipoEscritorAssembler;
 import co.edu.uco.publiuco.busisness.busisness.TipoEscritorBusiness;
@@ -40,10 +41,8 @@ public class TipoEscritorBusinessImpl implements TipoEscritorBusiness {
 	}
 
 	@Override
-	public void drop(TipoEscritorDomain domain) {
-		final TipoEscritorEntity entity = TipoEscritorAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getTipoEscritorDAO().delete(entity);
-
+	public void drop(UUID domainId) {
+		daoFactory.getTipoEscritorDAO().delete(domainId);
 	}
 
 }

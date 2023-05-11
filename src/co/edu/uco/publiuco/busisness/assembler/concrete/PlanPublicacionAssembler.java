@@ -44,13 +44,11 @@ public final class PlanPublicacionAssembler implements Assembler<PlanPublicacion
     }
 	@Override
 	public List<PlanPublicacionDomain> toDomainFromEntityList(List<PlanPublicacionEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 	@Override
 	public List<PlanPublicacionDTO> toDTOFromDomainList(List<PlanPublicacionDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

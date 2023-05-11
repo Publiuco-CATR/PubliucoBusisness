@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.HistorialAccesoPublicacionAssembler;
 import co.edu.uco.publiuco.busisness.busisness.HistorialAccesoPublicacionBusiness;
@@ -44,11 +45,8 @@ public class HistorialAccesoPublicacionBusinessImpl implements HistorialAccesoPu
 	}
 
 	@Override
-	public void drop(HistorialAccesoPublicacionDomain domain) {
-		final HistorialAccesoPublicacionEntity entity = HistorialAccesoPublicacionAssembler.getInstance()
-				.toEntityFromDomain(domain);
-		daoFactory.getHistorialAccesoPublicacionDAO().delete(entity);
-
+	public void drop(UUID domainId) {
+		daoFactory.getHistorialAccesoPublicacionDAO().delete(domainId);
 	}
 
 }

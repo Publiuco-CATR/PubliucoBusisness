@@ -52,13 +52,11 @@ public final class PersonaAssembler implements Assembler<PersonaDomain, PersonaD
     }
 	@Override
 	public List<PersonaDomain> toDomainFromEntityList(List<PersonaEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 	@Override
 	public List<PersonaDTO> toDTOFromDomainList(List<PersonaDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

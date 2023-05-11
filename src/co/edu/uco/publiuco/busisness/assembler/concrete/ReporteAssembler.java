@@ -43,13 +43,11 @@ public final class ReporteAssembler implements Assembler<ReporteDomain, ReporteD
 
 	@Override
 	public List<ReporteDomain> toDomainFromEntityList(List<ReporteEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 
 	@Override
 	public List<ReporteDTO> toDTOFromDomainList(List<ReporteDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 }

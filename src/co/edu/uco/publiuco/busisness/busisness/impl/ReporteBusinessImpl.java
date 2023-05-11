@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.ReporteAssembler;
 import co.edu.uco.publiuco.busisness.busisness.ReporteBusiness;
@@ -40,10 +41,8 @@ public class ReporteBusinessImpl implements ReporteBusiness {
 	}
 
 	@Override
-	public void drop(ReporteDomain domain) {
-		final ReporteEntity entity = ReporteAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getReporteDAO().delete(entity);
-
+	public void drop(UUID domainId) {
+		daoFactory.getReporteDAO().delete(domainId);
 	}
 
 }

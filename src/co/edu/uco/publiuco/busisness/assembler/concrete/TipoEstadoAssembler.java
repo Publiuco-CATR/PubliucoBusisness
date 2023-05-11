@@ -39,14 +39,12 @@ public final class TipoEstadoAssembler implements Assembler<TipoEstadoDomain, Ti
 
 	@Override
 	public List<TipoEstadoDomain> toDomainFromEntityList(List<TipoEstadoEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 
 	@Override
 	public List<TipoEstadoDTO> toDTOFromDomainList(List<TipoEstadoDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

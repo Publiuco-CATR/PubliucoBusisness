@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.EscritorPublicacionAssembler;
 import co.edu.uco.publiuco.busisness.busisness.EscritorPublicacionBusiness;
@@ -40,9 +41,8 @@ public class EscritorPublicacionBusinessImpl implements EscritorPublicacionBusin
 	}
 
 	@Override
-	public void drop(EscritorPublicacionDomain domain) {
-		final EscritorPublicacionEntity entity = EscritorPublicacionAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEscritorPublicacionDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getEscritorPublicacionDAO().delete(domainId);
 
 	}
 

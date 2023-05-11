@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.domain.RevisorDomain;
 
@@ -12,6 +13,6 @@ public interface RevisorBusiness {
 
 	void modify(RevisorDomain domain);
 
-	void drop(RevisorDomain domain);
+	void drop(UUID domainId);
 
 }

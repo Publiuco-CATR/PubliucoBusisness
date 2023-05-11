@@ -42,13 +42,11 @@ public final class SuscripcionPublicacionAssembler implements Assembler<Suscripc
     }
 	@Override
 	public List<SuscripcionPublicacionDomain> toDomainFromEntityList(List<SuscripcionPublicacionEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 	@Override
 	public List<SuscripcionPublicacionDTO> toDTOFromDomainList(List<SuscripcionPublicacionDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

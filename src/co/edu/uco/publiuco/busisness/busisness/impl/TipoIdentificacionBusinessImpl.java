@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.TipoIdentificacionAssembler;
 import co.edu.uco.publiuco.busisness.busisness.TipoIdentificacionBusiness;
@@ -40,9 +41,8 @@ public class TipoIdentificacionBusinessImpl implements TipoIdentificacionBusines
 	}
 
 	@Override
-	public void drop(TipoIdentificacionDomain domain) {
-		final TipoIdentificacionEntity entity = TipoIdentificacionAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getTipoIdentificacionDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getTipoIdentificacionDAO().delete(domainId);
 
 	}
 

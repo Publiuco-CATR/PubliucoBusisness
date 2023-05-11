@@ -44,14 +44,12 @@ public final class ObservacionRevisionAssembler implements Assembler<Observacion
 
 	@Override
 	public List<ObservacionRevisionDomain> toDomainFromEntityList(List<ObservacionRevisionEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 
 	@Override
 	public List<ObservacionRevisionDTO> toDTOFromDomainList(List<ObservacionRevisionDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

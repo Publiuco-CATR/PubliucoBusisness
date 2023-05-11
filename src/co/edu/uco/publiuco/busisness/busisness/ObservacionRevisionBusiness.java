@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.domain.ObservacionRevisionDomain;
 
@@ -12,6 +13,6 @@ public interface ObservacionRevisionBusiness {
 
 	void modify(ObservacionRevisionDomain domain);
 
-	void drop(ObservacionRevisionDomain domain);
+	void drop(UUID domainId);
 
 }

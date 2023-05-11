@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.ComentarioRevisorAssembler;
 import co.edu.uco.publiuco.busisness.busisness.ComentarioRevisorBusiness;
@@ -40,9 +41,8 @@ public class ComentarioRevisorBusinessImpl implements ComentarioRevisorBusiness 
 	}
 
 	@Override
-	public void drop(ComentarioRevisorDomain domain) {
-		final ComentarioRevisorEntity entity = ComentarioRevisorAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getComentarioRevisorDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getComentarioRevisorDAO().delete(domainId);
 
 	}
 

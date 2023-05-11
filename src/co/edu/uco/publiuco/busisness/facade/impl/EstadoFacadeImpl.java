@@ -23,31 +23,6 @@ public final class EstadoFacadeImpl implements EstadoFacade{
 		daoFactory = DAOFactory.getFactory(Factory.POSTGRESQL);
 		business = new EstadoBusinessImpl(daoFactory);
 	}
-	
-	@Override
-	public void register(EstadoDTO dto) {
-		try {
-			daoFactory.initTransaction();
-			final EstadoDomain domain = EstadoAssembler.getInstance().toDomainFromDTO(dto);
-			
-			business.register(domain);
-			
-			daoFactory.closeConnection();		
-			
-		} catch (final PubliucoException exception) {
-			daoFactory.rollbackTransaction();
-			throw exception;
-		} catch (final Exception exception) {
-			daoFactory.rollbackTransaction();
-			var userMessage = EstadoFacadeImplMessages.REGISTRER_ESTADO_USER_MESSAGE;
-			var technicalMessage = EstadoFacadeImplMessages.REGISTRER_ESTADO_TECHNICAL_MESSAGE;
-			
-			throw PubliucoBusisnessException.create(technicalMessage, userMessage, exception);
-		} finally {
-			daoFactory.closeConnection();
-		}
-		
-	}
 
 	@Override
 	public List<EstadoDTO> list(EstadoDTO dto) {
@@ -55,7 +30,7 @@ public final class EstadoFacadeImpl implements EstadoFacade{
 			daoFactory.initTransaction();
 			final EstadoDomain domainList = EstadoAssembler.getInstance().toDomainFromDTO(dto);
 			
-			List<EstadoDomain> lista = business.list(domainList); 
+			final List<EstadoDomain> lista = business.list(domainList); 
 						
 			return EstadoAssembler.getInstance().toDTOFromDomainList(lista);
 		
@@ -63,66 +38,12 @@ public final class EstadoFacadeImpl implements EstadoFacade{
 		} catch (final PubliucoException exception) {
 			throw exception;
 		} catch (final Exception exception) {
-			var userMessage = EstadoFacadeImplMessages.REGISTRER_ESTADO_USER_MESSAGE;
-			var technicalMessage = EstadoFacadeImplMessages.REGISTRER_ESTADO_TECHNICAL_MESSAGE;
+			final var userMessage = EstadoFacadeImplMessages.USER_MESSAGE_LIST;
+			final var technicalMessage = EstadoFacadeImplMessages.TECHNICAL_MESSAGE_LIST;
 			
 			throw PubliucoBusisnessException.create(technicalMessage, userMessage, exception);
 		} finally {
 			daoFactory.closeConnection();
 		}
 	}
-
-	@Override
-	public void modify(EstadoDTO dto) {
-		try {
-			daoFactory.initTransaction();
-			final EstadoDomain domain = EstadoAssembler.getInstance().toDomainFromDTO(dto);
-			
-			business.modify(domain);
-			
-			daoFactory.commitTransaction();
-		
-			
-		} catch (final PubliucoException exception) {
-			daoFactory.rollbackTransaction();
-			throw exception;
-		} catch (final Exception exception) {
-			daoFactory.rollbackTransaction();
-			var userMessage = EstadoFacadeImplMessages.REGISTRER_ESTADO_USER_MESSAGE;
-			var technicalMessage = EstadoFacadeImplMessages.REGISTRER_ESTADO_TECHNICAL_MESSAGE;
-			
-			throw PubliucoBusisnessException.create(technicalMessage, userMessage, exception);
-		} finally {
-			daoFactory.closeConnection();
-		}
-		
-	}
-
-	@Override
-	public void drop(EstadoDTO dto) { // cambiar dto por UUID :Ds
-		try {
-			daoFactory.initTransaction();
-			final EstadoDomain domain = EstadoAssembler.getInstance().toDomainFromDTO(dto);
-			
-			business.drop(domain);
-			
-			daoFactory.commitTransaction();
-		
-			
-		} catch (final PubliucoException exception) {
-			daoFactory.rollbackTransaction();
-			throw exception;
-		} catch (final Exception exception) {
-			daoFactory.rollbackTransaction();
-			var userMessage = EstadoFacadeImplMessages.REGISTRER_ESTADO_USER_MESSAGE;
-			var technicalMessage = EstadoFacadeImplMessages.REGISTRER_ESTADO_TECHNICAL_MESSAGE;
-			
-			throw PubliucoBusisnessException.create(technicalMessage, userMessage, exception);
-		} finally {
-			daoFactory.closeConnection();
-		}
-		
-	}
-	
-
 }

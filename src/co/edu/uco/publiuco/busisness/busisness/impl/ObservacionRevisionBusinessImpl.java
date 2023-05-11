@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.ObservacionRevisionAssembler;
 import co.edu.uco.publiuco.busisness.busisness.ObservacionRevisionBusiness;
@@ -40,9 +41,8 @@ public class ObservacionRevisionBusinessImpl implements ObservacionRevisionBusin
 	}
 
 	@Override
-	public void drop(ObservacionRevisionDomain domain) {
-		final ObservacionRevisionEntity entity = ObservacionRevisionAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getObservacionRevisionDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getObservacionRevisionDAO().delete(domainId);
 
 	}
 

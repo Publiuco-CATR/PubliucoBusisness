@@ -43,13 +43,11 @@ public final class HistorialAccesoPublicacionAssembler implements Assembler<Hist
 	@Override
 	public List<HistorialAccesoPublicacionDomain> toDomainFromEntityList(
 			List<HistorialAccesoPublicacionEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 	@Override
 	public List<HistorialAccesoPublicacionDTO> toDTOFromDomainList(List<HistorialAccesoPublicacionDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

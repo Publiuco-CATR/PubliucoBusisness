@@ -40,14 +40,12 @@ public final class CategoriaAdministradorCategoriaAssembler implements Assembler
 	@Override
 	public List<CategoriaAdministradorCategoriaDomain> toDomainFromEntityList(
 			List<CategoriaAdministradorCategoriaEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	@Override
 	public List<CategoriaAdministradorCategoriaDTO> toDTOFromDomainList(
 			List<CategoriaAdministradorCategoriaDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.CategoriaAssembler;
 import co.edu.uco.publiuco.busisness.busisness.CategoriaBusiness;
@@ -40,9 +41,8 @@ public class CategoriaBusinessImpl implements CategoriaBusiness {
 	}
 
 	@Override
-	public void drop(CategoriaDomain domain) {
-		final CategoriaEntity entity = CategoriaAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getCategoriaDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getCategoriaDAO().delete(domainId);
 
 	}
 

@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.EscritorAssembler;
 import co.edu.uco.publiuco.busisness.busisness.EscritorBusiness;
@@ -40,9 +41,8 @@ public class EscritorBusinessImpl implements EscritorBusiness {
 	}
 
 	@Override
-	public void drop(EscritorDomain domain) {
-		final EscritorEntity entity = EscritorAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEscritorDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getEscritorDAO().delete(domainId);
 
 	}
 

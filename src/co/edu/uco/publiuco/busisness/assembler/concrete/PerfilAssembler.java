@@ -43,13 +43,11 @@ public final class PerfilAssembler implements Assembler<PerfilDomain, PerfilDTO,
     }
 	@Override
 	public List<PerfilDomain> toDomainFromEntityList(List<PerfilEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 	@Override
 	public List<PerfilDTO> toDTOFromDomainList(List<PerfilDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

@@ -42,13 +42,11 @@ public final class EscritorPublicacionAssembler implements Assembler<EscritorPub
     }
 	@Override
 	public List<EscritorPublicacionDomain> toDomainFromEntityList(List<EscritorPublicacionEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 	@Override
 	public List<EscritorPublicacionDTO> toDTOFromDomainList(List<EscritorPublicacionDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

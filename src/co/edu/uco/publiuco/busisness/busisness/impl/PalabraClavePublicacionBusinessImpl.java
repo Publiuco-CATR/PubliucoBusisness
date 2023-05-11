@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.PalabraClavePublicacionAssembler;
 import co.edu.uco.publiuco.busisness.busisness.PalabraClavePublicacionBusiness;
@@ -43,10 +44,8 @@ public class PalabraClavePublicacionBusinessImpl implements PalabraClavePublicac
 	}
 
 	@Override
-	public void drop(PalabraClavePublicacionDomain domain) {
-		final PalabraClavePublicacionEntity entity = PalabraClavePublicacionAssembler.getInstance()
-				.toEntityFromDomain(domain);
-		daoFactory.getPalabraClavePublicacionDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getPalabraClavePublicacionDAO().delete(domainId);
 
 	}
 

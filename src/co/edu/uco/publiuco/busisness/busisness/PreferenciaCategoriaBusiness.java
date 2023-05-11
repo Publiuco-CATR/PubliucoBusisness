@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.domain.PreferenciaCategoriaDomain;
 
@@ -12,6 +13,6 @@ public interface PreferenciaCategoriaBusiness {
 
 	void modify(PreferenciaCategoriaDomain domain);
 
-	void drop(PreferenciaCategoriaDomain domain);
+	void drop(UUID domainId);
 
 }

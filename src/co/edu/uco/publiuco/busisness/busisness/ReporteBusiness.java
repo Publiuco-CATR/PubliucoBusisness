@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.domain.ReporteDomain;
 
@@ -12,6 +13,6 @@ public interface ReporteBusiness {
 
 	void modify(ReporteDomain domain);
 
-	void drop(ReporteDomain domain);
+	void drop(UUID domainId);
 
 }

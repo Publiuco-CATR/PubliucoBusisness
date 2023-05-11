@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.PreferenciaEscritorAssembler;
 import co.edu.uco.publiuco.busisness.busisness.PreferenciaEscritorBusiness;
@@ -40,10 +41,8 @@ public class PreferenciaEscritorBusinessImpl implements PreferenciaEscritorBusin
 	}
 
 	@Override
-	public void drop(PreferenciaEscritorDomain domain) {
-		final PreferenciaEscritorEntity entity = PreferenciaEscritorAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getPreferenciaEscritorDAO().delete(entity);
-
+	public void drop(UUID domainId) {
+		daoFactory.getPreferenciaEscritorDAO().delete(domainId);
 	}
 
 }

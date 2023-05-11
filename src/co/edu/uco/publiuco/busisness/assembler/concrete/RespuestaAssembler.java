@@ -39,13 +39,11 @@ public final class RespuestaAssembler implements Assembler<RespuestaDomain, Resp
     }
 	@Override
 	public List<RespuestaDomain> toDomainFromEntityList(List<RespuestaEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 	@Override
 	public List<RespuestaDTO> toDTOFromDomainList(List<RespuestaDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

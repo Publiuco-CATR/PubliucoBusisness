@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.VersionAssembler;
 import co.edu.uco.publiuco.busisness.busisness.VersionBusiness;
@@ -40,10 +41,8 @@ public class VersionBusinessImpl implements VersionBusiness {
 	}
 
 	@Override
-	public void drop(VersionDomain domain) {
-		final VersionEntity entity = VersionAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getVersionDAO().delete(entity);
-
+	public void drop(UUID domainId) {
+		daoFactory.getVersionDAO().delete(domainId);
 	}
 
 }

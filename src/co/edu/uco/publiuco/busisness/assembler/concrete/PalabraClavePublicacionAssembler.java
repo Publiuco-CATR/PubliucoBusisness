@@ -40,13 +40,11 @@ public final class PalabraClavePublicacionAssembler implements Assembler<Palabra
 
 	@Override
 	public List<PalabraClavePublicacionDomain> toDomainFromEntityList(List<PalabraClavePublicacionEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 
 	@Override
 	public List<PalabraClavePublicacionDTO> toDTOFromDomainList(List<PalabraClavePublicacionDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 }

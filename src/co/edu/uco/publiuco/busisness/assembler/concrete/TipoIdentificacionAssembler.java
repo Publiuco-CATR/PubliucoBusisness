@@ -39,13 +39,11 @@ public final class TipoIdentificacionAssembler implements Assembler<TipoIdentifi
     }
 	@Override
 	public List<TipoIdentificacionDomain> toDomainFromEntityList(List<TipoIdentificacionEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 	@Override
 	public List<TipoIdentificacionDTO> toDTOFromDomainList(List<TipoIdentificacionDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

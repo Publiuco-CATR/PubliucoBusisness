@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.domain.AdministradorCategoriaDomain;
 
@@ -12,6 +13,6 @@ public interface AdministradorCategoriaBusiness {
 
 	void modify(AdministradorCategoriaDomain domain);
 
-	void drop(AdministradorCategoriaDomain domain);
+	void drop(UUID domainId);
 
 }

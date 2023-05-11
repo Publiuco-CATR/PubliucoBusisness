@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.ComentarioLectorAssembler;
 import co.edu.uco.publiuco.busisness.busisness.ComentarioLectorBusiness;
@@ -40,9 +41,8 @@ public class ComentarioLectorBusinessImpl implements ComentarioLectorBusiness {
 	}
 
 	@Override
-	public void drop(ComentarioLectorDomain domain) {
-		final ComentarioLectorEntity entity = ComentarioLectorAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getComentarioLectorDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getComentarioLectorDAO().delete(domainId);
 
 	}
 

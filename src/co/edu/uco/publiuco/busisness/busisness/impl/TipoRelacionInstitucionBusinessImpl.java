@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.TipoRelacionInstitucionAssembler;
 import co.edu.uco.publiuco.busisness.busisness.TipoRelacionInstitucionBusiness;
@@ -36,17 +37,14 @@ public class TipoRelacionInstitucionBusinessImpl implements TipoRelacionInstituc
 
 	@Override
 	public void modify(TipoRelacionInstitucionDomain domain) {
-		final TipoRelacionInstitucionEntity entity = TipoRelacionInstitucionAssembler.getInstance()
-				.toEntityFromDomain(domain);
+		final TipoRelacionInstitucionEntity entity = TipoRelacionInstitucionAssembler.getInstance().toEntityFromDomain(domain);
 		daoFactory.getTipoRelacionInstitucionDAO().update(entity);
 
 	}
 
 	@Override
-	public void drop(TipoRelacionInstitucionDomain domain) {
-		final TipoRelacionInstitucionEntity entity = TipoRelacionInstitucionAssembler.getInstance()
-				.toEntityFromDomain(domain);
-		daoFactory.getTipoRelacionInstitucionDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getTipoRelacionInstitucionDAO().delete(domainId);
 
 	}
 

@@ -38,13 +38,11 @@ public final class TipoRevisionAssembler implements Assembler<TipoRevisionDomain
     }
 	@Override
 	public List<TipoRevisionDomain> toDomainFromEntityList(List<TipoRevisionEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 	@Override
 	public List<TipoRevisionDTO> toDTOFromDomainList(List<TipoRevisionDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

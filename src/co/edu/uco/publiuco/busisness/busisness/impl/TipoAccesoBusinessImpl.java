@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.TipoAccesoAssembler;
 import co.edu.uco.publiuco.busisness.busisness.TipoAccesoBusiness;
@@ -40,9 +41,8 @@ public class TipoAccesoBusinessImpl implements TipoAccesoBusiness {
 	}
 
 	@Override
-	public void drop(TipoAccesoDomain domain) {
-		final TipoAccesoEntity entity = TipoAccesoAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getTipoAccesoDAO().delete(entity);
+	public void drop(UUID domainid) {
+		daoFactory.getTipoAccesoDAO().delete(domainid);
 
 	}
 

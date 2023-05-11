@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.PublicacionAssembler;
 import co.edu.uco.publiuco.busisness.busisness.PublicacionBusiness;
@@ -40,10 +41,8 @@ public class PublicacionBusinessImpl implements PublicacionBusiness {
 	}
 
 	@Override
-	public void drop(PublicacionDomain domain) {
-		final PublicacionEntity entity = PublicacionAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getPublicacionDAO().delete(entity);
-
+	public void drop(UUID domainId) {
+		daoFactory.getPublicacionDAO().delete(domainId);
 	}
 
 }

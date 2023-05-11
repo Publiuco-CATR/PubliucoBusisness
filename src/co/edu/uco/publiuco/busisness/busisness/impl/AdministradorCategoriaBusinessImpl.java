@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.AdministradorCategoriaAssembler;
 import co.edu.uco.publiuco.busisness.busisness.AdministradorCategoriaBusiness;
@@ -42,10 +43,8 @@ public class AdministradorCategoriaBusinessImpl implements AdministradorCategori
 	}
 
 	@Override
-	public final void drop(AdministradorCategoriaDomain domain) {
-		final AdministradorCategoriaEntity entity = AdministradorCategoriaAssembler.getInstance()
-				.toEntityFromDomain(domain);
-		daoFactory.getAdministradorCategoriaDAO().delete(entity);
+	public final void drop(UUID domainId) {
+		daoFactory.getAdministradorCategoriaDAO().delete(domainId);
 
 	}
 

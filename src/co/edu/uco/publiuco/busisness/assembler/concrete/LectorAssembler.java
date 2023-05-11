@@ -39,13 +39,11 @@ public final class LectorAssembler implements Assembler<LectorDomain,LectorDTO, 
     	}
 	@Override
 	public List<LectorDomain> toDomainFromEntityList(List<LectorEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 	@Override
 	public List<LectorDTO> toDTOFromDomainList(List<LectorDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

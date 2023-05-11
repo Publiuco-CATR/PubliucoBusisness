@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.PreferenciaCategoriaAssembler;
 import co.edu.uco.publiuco.busisness.busisness.PreferenciaCategoriaBusiness;
@@ -43,10 +44,8 @@ public class PreferenciaCategoriaBusinessImpl implements PreferenciaCategoriaBus
 	}
 
 	@Override
-	public void drop(PreferenciaCategoriaDomain domain) {
-		final PreferenciaCategoriaEntity entity = PreferenciaCategoriaAssembler.getInstance()
-				.toEntityFromDomain(domain);
-		daoFactory.getPreferenciaCategoriaDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getPreferenciaCategoriaDAO().delete(domainId);
 
 	}
 

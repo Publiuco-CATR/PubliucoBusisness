@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.CalificacionAssembler;
 import co.edu.uco.publiuco.busisness.busisness.CalificacionBusiness;
@@ -40,9 +41,8 @@ public class CalificacionBusinessImpl implements CalificacionBusiness {
 	}
 
 	@Override
-	public void drop(CalificacionDomain domain) {
-		final CalificacionEntity entity = CalificacionAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getCalificacionDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getCalificacionDAO().delete(domainId);
 
 	}
 

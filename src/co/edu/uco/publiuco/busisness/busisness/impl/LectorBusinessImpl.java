@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.LectorAssembler;
 import co.edu.uco.publiuco.busisness.busisness.LectorBusiness;
@@ -40,9 +41,8 @@ public class LectorBusinessImpl implements LectorBusiness {
 	}
 
 	@Override
-	public void drop(LectorDomain domain) {
-		final LectorEntity entity = LectorAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getLectorDAO().delete(entity);
+	public void drop(UUID domainId) {
+		daoFactory.getLectorDAO().delete(domainId);
 
 	}
 

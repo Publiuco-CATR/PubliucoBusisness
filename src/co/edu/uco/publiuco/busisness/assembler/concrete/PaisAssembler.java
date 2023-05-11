@@ -36,15 +36,14 @@ public final class PaisAssembler implements Assembler<PaisDomain, PaisDTO, PaisE
    public static PaisAssembler getInstance() { 
 	   return INSTANCE; 
    }
-@Override
-public List<PaisDomain> toDomainFromEntityList(List<PaisEntity> entityList) {
-	// TODO Auto-generated method stub
-	return null;
-}
-@Override
-public List<PaisDTO> toDTOFromDomainList(List<PaisDomain> domainList) {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public List<PaisDomain> toDomainFromEntityList(List<PaisEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
+	}
+	@Override
+	public List<PaisDTO> toDTOFromDomainList(List<PaisDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	
+	}
 
 }

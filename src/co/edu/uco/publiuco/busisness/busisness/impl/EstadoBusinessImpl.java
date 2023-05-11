@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.busisness.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.EstadoAssembler;
 import co.edu.uco.publiuco.busisness.busisness.EstadoBusiness;
@@ -38,13 +39,8 @@ public class EstadoBusinessImpl implements EstadoBusiness{
 	}
 
 	@Override
-	public void drop(EstadoDomain domain) {
-		final EstadoEntity entity = EstadoAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEstadoDAO().delete(entity);		
+	public void drop(UUID domain) {
+		//final EstadoEntity entity = EstadoAssembler.getInstance().toEntityFromDomain(domain);
+		daoFactory.getEstadoDAO().delete(domain);		
 	}
-	
-	public static void main(String[] args) {
-		EscritorBusinessImpl intento = new EscritorBusinessImpl(null);
-	}
-
 }

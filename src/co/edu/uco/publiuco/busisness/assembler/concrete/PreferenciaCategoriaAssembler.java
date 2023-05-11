@@ -40,13 +40,11 @@ public final class PreferenciaCategoriaAssembler implements Assembler<Preferenci
 
 	@Override
 	public List<PreferenciaCategoriaDomain> toDomainFromEntityList(List<PreferenciaCategoriaEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
 	}
 
 	@Override
 	public List<PreferenciaCategoriaDTO> toDTOFromDomainList(List<PreferenciaCategoriaDomain> domainList) {
-		// TODO Auto-generated method stub
-		return null;
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 }
