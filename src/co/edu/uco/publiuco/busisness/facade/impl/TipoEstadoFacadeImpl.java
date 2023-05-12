@@ -13,6 +13,7 @@ import co.edu.uco.publiuco.dto.TipoEstadoDTO;
 import co.edu.uco.publiuco.utils.Messages;
 
 import java.util.List;
+import java.util.UUID;
 
 public final class TipoEstadoFacadeImpl implements TipoEstadoFacade {
     private final DAOFactory daoFactory;
@@ -48,4 +49,22 @@ public final class TipoEstadoFacadeImpl implements TipoEstadoFacade {
 
         }
     }
+
+	@Override
+	public void register(TipoEstadoDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modify(TipoEstadoDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drop(UUID dtoId) {
+		// TODO Auto-generated method stub
+		
+	}
 }
