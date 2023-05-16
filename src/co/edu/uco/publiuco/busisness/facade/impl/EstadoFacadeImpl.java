@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.busisness.facade.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import co.edu.uco.publiuco.busisness.assembler.concrete.EstadoAssembler;
 import co.edu.uco.publiuco.busisness.busisness.EstadoBusiness;
@@ -45,5 +46,23 @@ public final class EstadoFacadeImpl implements EstadoFacade{
 		} finally {
 			daoFactory.closeConnection();
 		}
+	}
+
+	@Override
+	public void register(EstadoDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modify(EstadoDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drop(UUID dtoId) {
+		// TODO Auto-generated method stub
+		
 	}
 }
