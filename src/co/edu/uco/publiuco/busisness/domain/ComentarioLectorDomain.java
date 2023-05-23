@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.domain;
 
+import co.edu.uco.publiuco.dto.ComentarioLectorDTO;
+import co.edu.uco.publiuco.utils.UtilBoolean;
 import co.edu.uco.publiuco.utils.UtilDate;
 import co.edu.uco.publiuco.utils.UtilObject;
 import co.edu.uco.publiuco.utils.UtilText;
@@ -8,15 +10,15 @@ import co.edu.uco.publiuco.utils.UtilUUID;
 import java.time.LocalDateTime;
 import java.util.UUID;
 public final class ComentarioLectorDomain {
-
 	private UUID identificador;
 	private LectorDomain lector;
 	private PublicacionDomain publicacion;
 	private ComentarioLectorDomain comentarioPadre;
+	private boolean tienePadre;
 	private String contenido;
-	private LocalDateTime fechaCalificacion;
+	private LocalDateTime fechaComentario;
 	private EstadoDomain estado;
-	public static ComentarioLectorDomain DEFAULT_OBJECT = new ComentarioLectorDomain();
+	public static final ComentarioLectorDomain DEFAULT_OBJECT = new ComentarioLectorDomain();
 
 
 	private ComentarioLectorDomain() {
@@ -26,22 +28,34 @@ public final class ComentarioLectorDomain {
 		setPublicacion(PublicacionDomain.getDefaultObject());
 		setComentarioPadre(getDefaultObject());
 		setContenido(UtilText.getDefaultValue());
-		setFechaCalificacion(UtilDate.getDefaultValue());
+		setFechaComentario(UtilDate.getDefaultValue());
 		setEstado(EstadoDomain.getDefaultObject() );
+		setTienePadre(UtilBoolean.getDefaultValue());
 	}
 
 
-	public ComentarioLectorDomain(UUID identificador, LectorDomain lector, PublicacionDomain publicacion, ComentarioLectorDomain comentarioPadre, String contenido, LocalDateTime fechaCalificacion, EstadoDomain estado) {
+	public ComentarioLectorDomain(UUID identificador, LectorDomain lector, PublicacionDomain publicacion, ComentarioLectorDomain comentarioPadre, String contenido, LocalDateTime fechaComentario, EstadoDomain estado,boolean tienePadre) {
 		super();
 		setIdentificador(identificador);
 		setLector(lector);
 		setComentarioPadre(comentarioPadre);
 		setPublicacion(publicacion);
 		setContenido(contenido);
-		setFechaCalificacion(fechaCalificacion);
+		setFechaComentario(fechaComentario);
 		setEstado(estado);
+		setTienePadre(tienePadre);
 	}
 
+	
+
+	public boolean tienePadre() {
+		return tienePadre;
+	}
+
+
+	public void setTienePadre(boolean tienePadre) {
+		this.tienePadre = UtilBoolean.getDefault(tienePadre);
+	}
 
 
 	public UUID getIdentificador() {
@@ -64,8 +78,8 @@ public final class ComentarioLectorDomain {
 		return contenido;
 	}
 
-	public LocalDateTime getFechaCalificacion() {
-		return fechaCalificacion;
+	public LocalDateTime getFechaComentario() {
+		return fechaComentario;
 	}
 
 	public EstadoDomain getEstado() {
@@ -85,7 +99,11 @@ public final class ComentarioLectorDomain {
 	}
 
 	private void setComentarioPadre(final ComentarioLectorDomain comentarioPadre) {
-		this.comentarioPadre = UtilObject.getDefault(comentarioPadre, ComentarioLectorDomain.getDefaultObject());
+		if(tienePadre()) {
+			this.comentarioPadre = UtilObject.getDefault(comentarioPadre, getDefaultObject());
+		}else {
+			this.comentarioPadre = (ComentarioLectorDomain) UtilObject.getNullValue();
+		}	
 	}
 
 	private void setEstado(final EstadoDomain estado) {
@@ -96,8 +114,8 @@ public final class ComentarioLectorDomain {
 		this.contenido = contenido;
 	}
 
-	private void setFechaCalificacion(final LocalDateTime fechaCalificacion) {
-		this.fechaCalificacion = fechaCalificacion;
+	private void setFechaComentario(final LocalDateTime fechaComentario) {
+		this.fechaComentario = fechaComentario;
 	}
 
 	public static ComentarioLectorDomain getDefaultObject() {

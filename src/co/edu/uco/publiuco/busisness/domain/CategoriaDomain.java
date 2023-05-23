@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.busisness.domain;
 
+import co.edu.uco.publiuco.entities.CategoriaEntity;
+import co.edu.uco.publiuco.utils.UtilBoolean;
 import co.edu.uco.publiuco.utils.UtilObject;
 import co.edu.uco.publiuco.utils.UtilText;
 import co.edu.uco.publiuco.utils.UtilUUID;
@@ -8,6 +10,7 @@ import java.util.UUID;
 
 public final class CategoriaDomain {
     private UUID identificador;
+    private boolean tienePadre;
     private CategoriaDomain categoriaPadre;
     private String nombre;
     private String descripcion;
@@ -21,17 +24,24 @@ public final class CategoriaDomain {
         setNombre(UtilText.getDefaultValue());
         setDescripcion(UtilText.getDefaultValue());
         setEstado(EstadoDomain.getDefaultObject());
+        setTienePadre(UtilBoolean.getDefaultValue());
     }
 
-    public CategoriaDomain(UUID identificador, CategoriaDomain categoriaPadre, String nombre, String descripcion, EstadoDomain estado) {
+    public CategoriaDomain(UUID identificador, CategoriaDomain categoriaPadre, String nombre, String descripcion, EstadoDomain estado, boolean tienePadre) {
         super();
         setIdentificador(identificador);
         setCategoriaPadre(categoriaPadre);
         setNombre(nombre);
         setDescripcion(descripcion);
         setEstado(estado);
+        setTienePadre(tienePadre);
+        
     }
 
+
+    public boolean tienePadre() {
+		return tienePadre;
+	}
 
     public UUID getIdentificador() {
         return identificador;
@@ -72,6 +82,11 @@ public final class CategoriaDomain {
     private void setEstado(EstadoDomain estado) {
         this.estado = UtilObject.getDefault(estado, EstadoDomain.getDefaultObject());
     }
+    
+    public void setTienePadre(boolean tienePadre) {
+		this.tienePadre = UtilBoolean.getDefault(tienePadre);
+	}
+    
     public static CategoriaDomain getDefaultObject (){
         return DEFAULT_OBJECT;
     }

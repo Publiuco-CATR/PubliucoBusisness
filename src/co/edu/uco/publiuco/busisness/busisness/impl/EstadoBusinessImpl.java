@@ -15,13 +15,6 @@ public class EstadoBusinessImpl implements EstadoBusiness{
 	public EstadoBusinessImpl (final DAOFactory daoFactory) {
 		this.daoFactory = daoFactory;
 	}
-	
-	@Override
-	public void register(EstadoDomain domain) {
-		final EstadoEntity entity = EstadoAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEstadoDAO().create(entity);
-		
-	}
 
 	@Override
 	public List<EstadoDomain> list(EstadoDomain domain) {
@@ -32,15 +25,4 @@ public class EstadoBusinessImpl implements EstadoBusiness{
 		return EstadoAssembler.getInstance().toDomainFromEntityList(resultEntityList);
 	}
 
-	@Override
-	public void modify(EstadoDomain domain) {
-		final EstadoEntity entity = EstadoAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEstadoDAO().update(entity);
-	}
-
-	@Override
-	public void drop(UUID domain) {
-		//final EstadoEntity entity = EstadoAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEstadoDAO().delete(domain);		
-	}
 }

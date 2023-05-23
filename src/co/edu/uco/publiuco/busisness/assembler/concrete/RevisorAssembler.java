@@ -37,6 +37,7 @@ public final class RevisorAssembler implements Assembler<RevisorDomain, RevisorD
     public static RevisorAssembler getInstance() { 
     	return INSTANCE; 
     }
+    
 	@Override
 	public List<RevisorDomain> toDomainFromEntityList(List<RevisorEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();	
