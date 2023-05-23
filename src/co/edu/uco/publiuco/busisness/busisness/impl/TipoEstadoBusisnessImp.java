@@ -19,8 +19,6 @@ public class TipoEstadoBusisnessImp implements TipoEstadoBusisness{
 	@Override
 	public void register(TipoEstadoDomain domain) {
 	
-		final TipoEstadoEntity entity = TipoEstadoAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getTipoEstadoDAO().create(entity);
 	}
 
 	@Override
